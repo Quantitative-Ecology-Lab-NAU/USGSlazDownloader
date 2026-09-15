@@ -4,7 +4,7 @@ A local Shiny app that accepts an `sf` point, polygon, or multipolygon; finds ev
 
 The project polygons come from layer 24 (`Lidar Point Cloud`) of the USGS `3DEPElevationIndex` map service. Tile records and bounding boxes come from the official TNM Access products API, then tile URLs are checked against each project's `0_file_download_links.txt` manifest when it is available. The map also displays layer 8 of the index as the USGS availability overlay.
 
-<img src="https://github.com/Quantitative-Ecology-Lab-NAU/USGSlazDownloader/blob/master/Screenshot.png" width="100%"  height="auto" align="center"/>
+<img src="https://github.com/Quantitative-Ecology-Lab-NAU/USGSlazDownloader/blob/main/Screenshot.png" width="100%"  height="auto" align="center"/>
 
 ## Start the app
 
