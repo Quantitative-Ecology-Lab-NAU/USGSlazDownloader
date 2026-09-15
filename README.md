@@ -1,8 +1,10 @@
-# USGS 3DEP Lidar Explorer/Downloader
+# USGS 3DEP Lidar Explorer
 
-A local Shiny app that accepts an `sf` point, polygon, or multipolygon (or a file; see below); finds every overlapping USGS 3DEP lidar project; lets the user choose among overlapping projects and individual LAS/LAZ tiles; and downloads those tiles to a chosen folder.
+A local Shiny app that accepts an `sf` point, polygon, or multipolygon; finds every overlapping USGS 3DEP lidar project; lets the user choose among overlapping projects and individual LAS/LAZ tiles; and downloads those tiles to a chosen folder.
 
 The project polygons come from layer 24 (`Lidar Point Cloud`) of the USGS `3DEPElevationIndex` map service. Tile records and bounding boxes come from the official TNM Access products API, then tile URLs are checked against each project's `0_file_download_links.txt` manifest when it is available. The map also displays layer 8 of the index as the USGS availability overlay.
+
+<img src="https://github.com/Quantitative-Ecology-Lab-NAU/USGSlazDownloader/blob/master/Screenshot.png" width="100%"  height="auto" align="center"/>
 
 ## Start the app
 
@@ -24,6 +26,25 @@ The required packages are `shiny`, `sf`, `leaflet`, `curl`, `jsonlite`, `rlas`, 
 ```r
 install.packages(c("shiny", "sf", "leaflet", "curl", "jsonlite", "rlas", "lidR"))
 ```
+
+## Create a double-clickable Windows launcher
+
+Install `shiny.exe` once, then generate the launcher:
+
+```r
+install.packages("shiny.exe")
+source("create_launcher.R")
+```
+
+You can also generate it from a command prompt:
+
+```text
+Rscript create_launcher.R
+```
+
+This creates `USGS_3DEP_Lidar_Explorer.bat` and its companion R launcher in this folder. Double-click the BAT file to start the app without opening R or RStudio. Keep the terminal window open while using the app; closing that window stops the local Shiny server.
+
+The launcher listens only on `127.0.0.1`, so it is available to this computer rather than other devices on the network. All launcher paths are resolved at runtime: the complete project folder may be copied, downloaded, renamed, or moved without regenerating the launcher. The BAT file finds `Rscript.exe` from `PATH` or common per-user and system R installation folders.
 
 ## Start with an existing sf object
 

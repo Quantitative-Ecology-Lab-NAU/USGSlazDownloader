@@ -17,5 +17,5 @@ Imports:
     sf,
     shiny
 Suggests:
+    shiny.exe,
     testthat
-
