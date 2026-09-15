@@ -15,7 +15,7 @@ Imports:
     lidR,
     rlas,
     sf,
-    shiny
+    shiny,
+	shiny.exe
 Suggests:
-    shiny.exe,
     testthat

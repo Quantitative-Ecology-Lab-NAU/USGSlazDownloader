@@ -21,10 +21,10 @@ Or at a command prompt:
 Rscript run_app.R
 ```
 
-The required packages are `shiny`, `sf`, `leaflet`, `curl`, `jsonlite`, `rlas`, and `lidR`.
+The required packages are `shiny`, `shiny.exe`, `sf`, `leaflet`, `curl`, `jsonlite`, `rlas`, and `lidR`.
 
 ```r
-install.packages(c("shiny", "sf", "leaflet", "curl", "jsonlite", "rlas", "lidR"))
+install.packages(c("shiny", "sf", "leaflet", "curl", "jsonlite", "rlas", "lidR", "shiny.exe"))
 ```
 
 ## Create a double-clickable Windows launcher
